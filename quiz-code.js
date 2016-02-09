@@ -82,8 +82,8 @@ var totalScore2 = 0;
 
 // choose a random state name
 
-var stateChoice = 3
-var stateRandom = 3
+var stateChoice = "This is a public variable"
+var stateRandom = "This is a public variable"
 
 var pickState = function () {
   stateRandom = Math.floor(Math.random () * 50);
@@ -92,6 +92,19 @@ var pickState = function () {
 };
 
  pickState();
+
+// choose if wildcard question
+
+ var pickWildcard = function () {
+  var wildcardRandom = Math.random();
+  if (wildcardRandom < .15) {
+    return true
+  } else {
+    return false
+  }
+}
+
+pickWildcard ()
 
 // choose state questions
 var pickQ = function () {
@@ -109,4 +122,9 @@ var pickQ = function () {
 
 
 pickQ ()
+
+
+
+
+
 
