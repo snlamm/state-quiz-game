@@ -76,14 +76,17 @@ var playerNum = function () {
 
 playerNum();
 
+//Player 1 and Player 2
+
+var players = ["Player 1", "Player 2"]
+
 // keep track of player score
-var totalScore1 = 0;
-var totalScore2 = 0;
+var totalScore = [totalScore1 = 0, totalScore2 = 0]
 
 // choose a random state name
 
-var stateChoice = "This is a public variable"
 var stateRandom = "This is a public variable"
+var stateChoice = "This is a public variable"
 
 var pickState = function () {
   stateRandom = Math.floor(Math.random () * 50);
@@ -104,8 +107,6 @@ var pickState = function () {
   }
 }
 
-pickWildcard ()
-
 // choose state questions
 var pickQ = function () {
     var qRandom = Math.floor(Math.random() * 2);
@@ -124,6 +125,39 @@ var pickQ = function () {
 pickQ ()
 
 
+// setup for while loops 
+
+var scoreLessThan10 === true
+var invalidWildcardEntry === true
+var wildcardPrompt = "This will prompt a wildcard wager"
+
+// the wildcard
+
+while (scoreLessThan10 && twoPlayer) {
+  for (i = 0; i < players.length; i++ ) {
+  pickWildcard () 
+    if (pickWildcard === true) {
+      var wildcardWager = function () {
+        var wildcardConfirm = confirm (player[i] + ": You got a wildcard! This means that you must wager your curent points on the next question. \
+          If you get it correct, you win that number of points. If you get it wrong, you lose that number of points. Good luck!");
+        while (invalidWildcardEntry) {
+          wildcardPrompt = prompt ("Please enter the number of points you would like to wager. You can wager up to " + totalScore[i] + " points")
+          if (wildcardPrompt < 1 || wildcardPrompt > totalScore[i]) { 
+            console.log ("Error: please enter a number between 1 and " + totalScore[i]);
+          } else {
+            console.log ("you have wagered " + wildcardPrompt + " points" );
+            invalidWildcardEntry === false
+          }
+        }
+      }
+      wildcardWager ()
+    }
+
+  }
+
+  scoreLessThan10 === false
+
+}
 
 
 
