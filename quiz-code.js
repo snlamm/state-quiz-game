@@ -94,8 +94,6 @@ var pickState = function () {
   return stateChoice
 };
 
- pickState();
-
 // choose if wildcard question
 
  var pickWildcard = function () {
@@ -112,17 +110,14 @@ var pickQ = function () {
     var qRandom = Math.floor(Math.random() * 2);
     switch (qRandom) {
       case 0:
-      prompt ("What is the capital of "+ stateChoice.toUpperCase());
+      prompt (Player[i] + ": What is the capital of "+ stateChoice.toUpperCase());
       break;
       case 1:
-      prompt ("Which state "+ sA[stateRandom].trivia + "?");
+      prompt (Player[i] + ": Which state "+ sA[stateRandom].trivia + "?");
       break;
     }
 
 };
-
-
-pickQ ()
 
 
 // setup for while loops 
@@ -131,11 +126,15 @@ var scoreLessThan10 === true
 var invalidWildcardEntry === true
 var wildcardPrompt = "This will prompt a wildcard wager"
 
-// the wildcard
+// while loop for the whole game
 
 while (scoreLessThan10 && twoPlayer) {
+
+// loops through both players 
   for (i = 0; i < players.length; i++ ) {
   pickWildcard () 
+
+// initial wildcard setup 
     if (pickWildcard === true) {
       var wildcardWager = function () {
         var wildcardConfirm = confirm (player[i] + ": You got a wildcard! This means that you must wager your curent points on the next question. \
@@ -153,6 +152,10 @@ while (scoreLessThan10 && twoPlayer) {
       wildcardWager ()
     }
 
+// choose question 
+    pickState ()
+    pickQ ()
+    
   }
 
   scoreLessThan10 === false
